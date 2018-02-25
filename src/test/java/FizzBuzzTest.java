@@ -37,4 +37,14 @@ public class FizzBuzzTest {
 
         assertEquals("BUZZ", value);
     }
+
+    @Test
+    public void shouldReturnFizzBuzzWhenNumberIsMultipleOf3And5() {
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        String value = "";
+
+        value = fizzBuzz.getValue(15);
+
+        assertEquals("FIZZBUZZ", value);
+    }
 }
