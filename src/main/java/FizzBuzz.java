@@ -2,6 +2,10 @@ public class FizzBuzz {
 
 
     public String getValue(int number) {
-        return "1";
+
+        if(number % 3 == 0)
+            return "FIZZ";
+
+        return String.valueOf(number);
     }
 }

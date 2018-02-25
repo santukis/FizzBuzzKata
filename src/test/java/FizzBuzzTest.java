@@ -23,6 +23,6 @@ public class FizzBuzzTest {
 
         value = fizzBuzz.getValue(6);
 
-        assertEquals(String.valueOf(6), value);
+        assertEquals("FIZZ", value);
     }
 }
