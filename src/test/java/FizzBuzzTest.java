@@ -16,5 +16,13 @@ public class FizzBuzzTest {
         assertEquals(String.valueOf(ANY_NUMBER_NOT_MULTIPLE_3_5), value);
     }
 
+    @Test
+    public void shouldReturnFizzWhenNumberIsMultipleOf3() {
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        String value = "";
 
+        value = fizzBuzz.getValue(6);
+
+        assertEquals(String.valueOf(6), value);
+    }
 }
