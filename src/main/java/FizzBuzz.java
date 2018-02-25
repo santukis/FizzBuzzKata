@@ -6,12 +6,17 @@ public class FizzBuzz {
 
     public String getValue(int number) {
 
+        String response = "";
+
         if(number % 3 == 0)
-            return FIZZ;
+            response += FIZZ;
 
         if(number % 5 == 0)
-            return BUZZ;
+            response += BUZZ;
 
-        return String.valueOf(number);
+        if(response.isEmpty())
+            response = String.valueOf(number);
+        
+        return response;
     }
 }
