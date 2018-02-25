@@ -48,4 +48,12 @@ public class FizzBuzzTest {
 
         assertEquals("FIZZBUZZ", value);
     }
+
+    @Test
+    public void shouldPrintValueWhenNumberNotMultipleOf3_5() {
+        FizzBuzz fizzBuzz = new FizzBuzz();
+
+        fizzBuzz.printValue(ANY_NUMBER_NOT_MULTIPLE_3_5);
+        
+    }
 }

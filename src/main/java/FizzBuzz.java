@@ -1,6 +1,5 @@
 public class FizzBuzz {
 
-
     private static final String FIZZ = "FIZZ";
     private static final String BUZZ = "BUZZ";
     private static final int THREE = 3;
