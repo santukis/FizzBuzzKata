@@ -6,6 +6,7 @@ public class FizzBuzzTest {
 
     private static final int ANY_NUMBER_NOT_MULTIPLE_3_5 = 1;
     private static final int ANY_NUMBER_MULTIPLE_OF_3 = 6;
+    private static final int ANY_NUMBER_MULTIPLE_OF_5 = 10;
 
     @Test
     public void shouldReturnValueWhenNumberNotMultiple3_5() {
@@ -32,7 +33,7 @@ public class FizzBuzzTest {
         FizzBuzz fizzBuzz = new FizzBuzz();
         String value = "";
 
-        value = fizzBuzz.getValue(10);
+        value = fizzBuzz.getValue(ANY_NUMBER_MULTIPLE_OF_5);
 
         assertEquals("BUZZ", value);
     }
