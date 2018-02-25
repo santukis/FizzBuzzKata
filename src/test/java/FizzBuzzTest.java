@@ -1,7 +1,6 @@
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
@@ -12,6 +11,7 @@ public class FizzBuzzTest {
     private static final int ANY_NUMBER_MULTIPLE_OF_3 = 6;
     private static final int ANY_NUMBER_MULTIPLE_OF_5 = 10;
     private static final int ANY_NUMBER_MULTIPLE_OF_3_AND_5 = 15;
+
     private FizzBuzz fizzBuzz;
     private Writer mockedWriter;
 
@@ -22,45 +22,34 @@ public class FizzBuzzTest {
     }
 
     @Test
-    public void shouldReturnValueWhenNumberNotMultiple3_5() {
-        String value = "";
-
-        value = fizzBuzz.getValue(ANY_NUMBER_NOT_MULTIPLE_3_5);
-
-        assertEquals(String.valueOf(ANY_NUMBER_NOT_MULTIPLE_3_5), value);
-    }
-
-    @Test
-    public void shouldReturnFizzWhenNumberIsMultipleOf3() {
-        String value = "";
-
-        value = fizzBuzz.getValue(ANY_NUMBER_MULTIPLE_OF_3);
-
-        assertEquals("FIZZ", value);
-    }
-
-    @Test
-    public void shouldReturnBuzzWhenNumberIsMultipleOf5() {
-        String value = "";
-
-        value = fizzBuzz.getValue(ANY_NUMBER_MULTIPLE_OF_5);
-
-        assertEquals("BUZZ", value);
-    }
-
-    @Test
-    public void shouldReturnFizzBuzzWhenNumberIsMultipleOf3And5() {
-        String value = "";
-
-        value = fizzBuzz.getValue(ANY_NUMBER_MULTIPLE_OF_3_AND_5);
-
-        assertEquals("FIZZBUZZ", value);
-    }
-
-    @Test
-    public void shouldPrintValueWhenNumberNotMultipleOf3_5() {
+    public void shouldPrintValueWhenNumberNotMultiple3_5() {
         fizzBuzz.printValue(ANY_NUMBER_NOT_MULTIPLE_3_5);
 
-        verify(mockedWriter).print(eq("1"));
+        verifyPrintValue(String.valueOf(ANY_NUMBER_NOT_MULTIPLE_3_5));
+    }
+
+    @Test
+    public void shouldPrintFizzWhenNumberIsMultipleOf3() {
+        fizzBuzz.printValue(ANY_NUMBER_MULTIPLE_OF_3);
+
+        verifyPrintValue("FIZZ");
+    }
+
+    @Test
+    public void shouldPrintBuzzWhenNumberIsMultipleOf5() {
+        fizzBuzz.printValue(ANY_NUMBER_MULTIPLE_OF_5);
+
+        verifyPrintValue("BUZZ");
+    }
+
+    @Test
+    public void shouldPrintFizzBuzzWhenNumberIsMultipleOf3And5() {
+        fizzBuzz.printValue(ANY_NUMBER_MULTIPLE_OF_3_AND_5);
+
+        verifyPrintValue("FIZZBUZZ");
+    }
+
+    private void verifyPrintValue(String value) {
+        verify(mockedWriter).print(eq(value));
     }
 }

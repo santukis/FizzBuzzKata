@@ -11,25 +11,24 @@ public class FizzBuzz {
         this.writer = writer;
     }
 
-
     public void printValue(int number) {
         writer.print(getValue(number));
     }
 
-    public String getValue(int number) {
+    private String getValue(int number) {
 
         String response = "";
 
-        if(isMultiple(number, THREE)) response += FIZZ;
+        if(isMultipleOf(number, THREE)) response += FIZZ;
 
-        if(isMultiple(number, FIVE)) response += BUZZ;
+        if(isMultipleOf(number, FIVE)) response += BUZZ;
 
         if(response.isEmpty()) response = String.valueOf(number);
 
         return response;
     }
 
-    private boolean isMultiple(int number, int of) {
+    private boolean isMultipleOf(int number, int of) {
         return number % of == 0;
     }
 }
